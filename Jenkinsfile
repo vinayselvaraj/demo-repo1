@@ -15,7 +15,7 @@ pipeline {
         build job: 'cfn-template-inspector', parameters: [
           [$class: 'StringParameterValue', name: 'workspaceDir', value: "${env.WORKSPACE}"],
           [$class: 'StringParameterValue', name: 'templateFilename', value: 'stack.yaml'],
-          [$class: 'BooleanParameterValue', name: 'runInspector', value: false]
+          [$class: 'BooleanParameterValue', name: 'runInspector', value: Boolean.valueOf("false")]
         ]
       }
     }
