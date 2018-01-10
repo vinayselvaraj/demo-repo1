@@ -9,6 +9,7 @@ Resources:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
       GroupDescription: "Wide open SSH security group.."
+      VpcId: "vpc-93c2ebeb"
       SecurityGroupIngress:
         -
           IpProtocol: "tcp"
