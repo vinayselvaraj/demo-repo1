@@ -3,7 +3,7 @@
 pipeline {
   
   environment {
-    STACK_NAME = "demo1"
+    STACK_NAME = "StaticTesting"
     AWS_REGION = "us-east-1"
   }
 
