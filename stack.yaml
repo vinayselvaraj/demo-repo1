@@ -8,7 +8,7 @@ Resources:
   SG:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
-      GroupDescription: "Wide open SSH security group"
+      GroupDescription: "Wide open SSH security group.."
       SecurityGroupIngress:
         -
           IpProtocol: "tcp"
