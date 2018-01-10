@@ -13,9 +13,9 @@ pipeline {
     stage('Inspect Template') {
       steps {
         build job: 'cfn-template-inspector', parameters: [
-          string(name: 'workspaceDir', value: "${env.WORKSPACE}"),
-          string(name: 'templateFilename', value: 'stack.yaml'),
-          string(name: 'runInspector', value: 'false')
+          [$class: 'StringParameterValue', name: 'workspaceDir', value: "${env.WORKSPACE}"],
+          [$class: 'StringParameterValue', name: 'templateFilename', value: 'stack.yaml'],
+          [$class: 'BooleanParameterValue', name: 'runInspector', value: false)]
         ]
       }
     }
