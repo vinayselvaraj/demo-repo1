@@ -15,7 +15,7 @@ pipeline {
         build job: 'cfn-template-inspector', parameters: [
           string(name: 'workspaceDir', value: "${env.WORKSPACE}"),
           string(name: 'templateFilename', value: 'stack.yaml'),
-          boolean(name: 'runInspector', value: false)
+          string(name: 'runInspector', value: 'false')
         ]
       }
     }
