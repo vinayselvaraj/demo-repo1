@@ -1,0 +1,25 @@
+
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: EC2 Instance Template
+
+Resources:
+
+  EC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties: 
+      ImageId: "ami-55ef662f"
+      InstanceType: t2.large
+      KeyName: default
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            curl  https://d1wk0tztpsntt1.cloudfront.net/linux/latest/install --output /tmp/inspector_install
+            bash /tmp/inspector_install
+            #yum -y update
+            /opt/aws/bin/cfn-signal -e 0 --stack ${AWS::StackName} --region ${AWS::Region} --resource EC2Instance
+
+    CreationPolicy:
+      ResourceSignal:
+        Timeout: PT15M
