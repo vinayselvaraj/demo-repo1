@@ -8,6 +8,7 @@ Resources:
   SG:
     Type: "AWS::EC2::SecurityGroup"
     Properties:
+      GroupDescription: "Wide open security group"
       SecurityGroupIngress:
         -
           IpProtocol: "tcp"
