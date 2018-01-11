@@ -16,12 +16,12 @@ Resources:
           FromPort: "22"
           ToPort: "22"
           CidrIp: "1.2.3.4/32"
- #     SecurityGroupEgress:
- #       -
- #         IpProtocol: "tcp"
- #         FromPort: "22"
- #         ToPort: "22"
- #         CidrIp: "1.2.3.4/32"
+      SecurityGroupEgress:
+        -
+          IpProtocol: "tcp"
+          FromPort: "22"
+          ToPort: "22"
+          CidrIp: "1.2.3.4/32"
 
   EC2Instance:
     Type: "AWS::EC2::Instance"
